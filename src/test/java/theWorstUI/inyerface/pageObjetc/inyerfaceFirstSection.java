@@ -6,6 +6,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class inyerfaceFirstSection extends PageObject {
@@ -22,9 +23,13 @@ public class inyerfaceFirstSection extends PageObject {
     @FindBy(css ="span[class~=\"checkbox\"]")
     WebElementFacade checkTerms;
 
+    @FindBy(css=".dropdown__opener")
+    WebElementFacade drop;
 
-    public static final String TITULO_RESULTADO_ESPERADO = "//h3[contains(@class,'LC20lb DKV0Md') and contains(.,'{0}')]";
+    @FindBy(xpath= "//div[contains(@class,'dropdown__list-item') and contains(text(),'.com')]")
+    WebElementFacade list;
 
+    public static final String NEXT_TEXT = "//a[contains(@class,'button--secondary') and contains(text(),'{0}')]";
 
     public void typePasswordAndMail(String passw,String email) {
         password.clear();
@@ -33,9 +38,9 @@ public class inyerfaceFirstSection extends PageObject {
         mail.sendKeys(email);
         domain.clear();
         domain.sendKeys("none");
+        drop.click();
 
-        Select selectByValue = new Select(driver.findElement(By.className(".dropdown__field")));
-        selectByValue.selectByVisibleText(".com");
+        list.click();
     }
 
     public void clickOnCheckbox() {
@@ -43,6 +48,6 @@ public class inyerfaceFirstSection extends PageObject {
     }
 
     public void clickOnNext(String textNext) {
-        driver.findElement(By.xpath("//a[contains(@class,'button--secondary') and contains(text(),'{0}')]")).click();
+        findBy(NEXT_TEXT,textNext).then().click();
     }
 }
