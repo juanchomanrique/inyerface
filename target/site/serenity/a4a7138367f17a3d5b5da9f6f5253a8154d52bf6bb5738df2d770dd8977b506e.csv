@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Fill in the form of UserInyerface","User can reach the ""This is me"" section of the game","SUCCESS","2021-01-15T19:58:53.855136-05:00[America/Bogota]","0.0","12.93"
+"Fill in the form of UserInyerface","User doesn't upload an image and select more than 3 interests in the section ""This is me""","SUCCESS","2021-01-15T19:59:07.4964764-05:00[America/Bogota]","0.0","9.65"

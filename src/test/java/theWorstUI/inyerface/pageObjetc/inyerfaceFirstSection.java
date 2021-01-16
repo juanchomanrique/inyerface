@@ -3,14 +3,9 @@ package theWorstUI.inyerface.pageObjetc;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 
 public class inyerfaceFirstSection extends PageObject {
-    WebDriver driver = getDriver();
+
     @FindBy(css = "div:nth-child(2) > input")
     WebElementFacade password;
 
